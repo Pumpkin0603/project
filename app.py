@@ -35,4 +35,5 @@ def login():
 @app.route('/register')
 def register():
     return render_template('register.html')
+
 init_db()
