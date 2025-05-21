@@ -1,7 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
-from typing import Any
-
+import os
 app = Flask(__name__)
 
 DATABASE = 'membership.db'
@@ -25,5 +24,15 @@ def init_db() -> None:
             ('admin', 'admin@example.com', 'admin123', '0912345678', '1990-01-01'))
         conn.commit()
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 init_db()
