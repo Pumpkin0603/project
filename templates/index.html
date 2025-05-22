@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}首頁{% endblock %}
 {% block content %}
-<div class="text-center mt-5">
-    <h1 class="mb-4">會員系統首頁</h1>
-    <p class="mb-4">歡迎使用會員系統！請選擇以下操作：</p>
-    <a href="{{ url_for('login') }}" class="btn btn-primary me-2">登入</a>
-    <a href="{{ url_for('register') }}" class="btn btn-success ms-2">註冊</a>
+<h1 class="text-center mb-2" style="font-weight: normal; color: black;">會員系統首頁</h1>
+<p class="text-center mb-4" style="color: black;">歡迎使用會員系統，請選擇以下操作：</p>
+
+<div class="d-flex justify-content-center gap-3">
+    <a href="{{ url_for('login') }}" class="btn btn-primary">登入</a>
+    <a href="{{ url_for('register') }}" class="btn btn-success">註冊</a>
 </div>
 {% endblock %}
