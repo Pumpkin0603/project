@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}歡迎{% endblock %}
+{% block content %}
+<style>
+    .welcome-card {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: white;
+        border: 1px solid white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+</style>
+
+<div class="welcome-card text-center">
+    <h2 class="mb-4">歡迎，{{ username|add_stars }}！</h2>
+
+    <div class="d-grid gap-2 col-8 mx-auto">
+        <a href="{{ url_for('edit_profile', iid=iid) }}" class="btn btn-primary">修改基本資料</a>
+        <a href="{{ url_for('delete', iid=iid) }}"
+           class="btn btn-danger"
+           onclick="return confirm('若刪除這個使用者，所有相關記錄將一併刪除，是否繼續？');">刪除使用者</a>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">返回首頁</a>
+    </div>
+</div>
+{% endblock %}
