@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
-{% block title %}登入{% endblock %}
+{% block title %}會員系統-登入{% endblock %}
 {% block content %}
-<div class="d-flex justify-content-center">
-    <div class="col-md-6 col-lg-5">
-        <h2 class="text-center mb-4">會員登入</h2>
-        <form method="post">
-            <div class="mb-3">
-                <label class="form-label">電子郵件</label>
-                <input type="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-4">
-                <label class="form-label">密碼</label>
-                <input type="password" name="password" class="form-control" required>
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">登入</button>
-            </div>
-        </form>
+<h2 class="text-center mb-2">會員登入</h2>
+<form method="post" class="mx-auto" style="max-width: 500px;">
+    <div class="mb-3">
+        <label class="form-label">電子郵件</label>
+        <input type="email" name="email" class="form-control" required>
     </div>
-</div>
+    <div class="mb-4">
+        <label class="form-label">密碼</label>
+        <input type="password" name="password" class="form-control" required>
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">登入</button>
+    </div>
+</form>
 {% endblock %}
